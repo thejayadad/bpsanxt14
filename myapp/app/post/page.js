@@ -15,7 +15,7 @@ const AllPosts = async () => {
                         <Link href={`/post/${post.id}`}>
                             {post.title}
                         </Link>
-                        <Link href={'/'}>
+                        <Link href={`/profile/${post.creator}`}>
                             {post.creator}
                         </Link>
                     </div>
