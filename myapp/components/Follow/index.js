@@ -1,14 +1,31 @@
-import getServerUser from '@/lib/getServerUser'
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react';
+import { followUser } from '@/lib/actions';
+import FollowButton from '../buttons/FollowButton';
+import getServerUser from '@/lib/getServerUser';
 
-const Follow = async () => {
-    const user = await getServerUser()
-    if(!user){
-        return <h2>Not Auth</h2>
+const Follow = ({ userEmail }) => {
+  const handleFollow = async () => {
+    try {
+      const sessionUser = await getServerUser();
+      if (sessionUser.email !== userEmail) {
+        await followUser(userEmail, sessionUser.email);
+        console.log(`You are now following ${userEmail}`);
+      }
+    } catch (error) {
+      console.error('Error following user:', error);
     }
-  return (
-    <div>Follow</div>
-  )
-}
+  };
 
-export default Follow
+  useEffect(() => {
+    handleFollow();
+  }, []); // This empty dependency array ensures that handleFollow runs only once on mount
+
+  return (
+    <div>
+      <FollowButton userEmail={userEmail} />
+    </div>
+  );
+};
+
+export default Follow;
