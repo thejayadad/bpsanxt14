@@ -16,14 +16,17 @@ const AuthLinks = async  () => {
     >
        {!!session && (
             <>
+              <Link href={'/post'}>Post</Link>
               <Link href={'/account'}>
                 Hello, {session?.user?.name}
               </Link>
+              <Link href={'/create'}>Create</Link>
               <LogoutButton />
             </>
           )}
           {!session && (
             <>
+            <Link href={'/post'}>Post</Link>
             <LoginWithGoogle />
             </>
           )}
