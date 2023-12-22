@@ -4,7 +4,7 @@ import React from 'react'
 const Logo = () => {
   return (
     <Link href={'/'}>
-        Logo
+        FanFury SportsHub
     </Link>
   )
 }
