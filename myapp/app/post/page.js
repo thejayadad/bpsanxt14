@@ -41,9 +41,11 @@ const AllPosts = async () => {
           </p>
       
           <div>
-            <a href="#" className="font-semibold text-orange transition duration-100 hover:text-rose-600 active:text-rose-700">
+            <Link 
+            href={`/post/${post.id}`} 
+            className="font-semibold text-orange transition duration-100 hover:text-rose-600 active:text-rose-700">
               Read more
-            </a>
+            </Link>
           </div>
         </div>
       </article>

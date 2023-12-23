@@ -13,7 +13,7 @@ const ProfilePage = async ({params}) => {
   console.log("ProfileEmail " + postByUser)
   return (
     <section className='px-4 py-8'>
-        <div className='max-w-screen-xl mx-auto flex flex-col'>
+        <div className='max-w-screen-xl mx-auto flex flex-col h-screen'>
             <h2>Profile {username} Page</h2>
             {
               postByUser.map((post) => (
