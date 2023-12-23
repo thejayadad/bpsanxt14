@@ -9,6 +9,10 @@ const CreatePost = () => {
         >
             <label>Title</label>
         <input type="text" placeholder="Title..." name="title" required />
+        <label>Description</label>
+        <input type="text" placeholder="Description..." name="desc" required />
+        <label>Title</label>
+        <input type="text" placeholder="Image..." name="imgUrl" required />
         <button
         type='submit'
         >Create</button>

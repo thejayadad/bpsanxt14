@@ -12,12 +12,14 @@ export const addPost = async (formData) => {
     const userId = await getServerUser(authOptions)
     console.log("Action UserID " + userId)
     console.log("UserId Email " + userId.email)
-    const { title } =
+    const { title, imgUrl,desc } =
     Object.fromEntries(formData);
     try {
         db.connect()
         const newPost = new Post({
             title,
+            imgUrl,
+            desc,
             creator:  userId.email 
         })
         await newPost.save()
